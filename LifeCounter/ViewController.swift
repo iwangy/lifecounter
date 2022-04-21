@@ -66,7 +66,6 @@ class ViewController: UIViewController {
         updateScoreNum1()
     }
     
-    
     // Player 2 Buttons
     @IBAction func minusButtonDidTouchUpInside2(_ sender: Any) {
         scoreNum2 -= 1
@@ -88,6 +87,8 @@ class ViewController: UIViewController {
         if scoreNum2 <= 0 {
             checkScore(player: "2")
             updateResultLabel2()
+        } else {
+            updateResultLabel2()
         }
     }
     @IBAction func plus5ButtonDidTouchUpInside2(_ sender: Any) {
@@ -95,8 +96,7 @@ class ViewController: UIViewController {
         updateScoreNum2()
     }
     
-    // Update Scores
-    
+    // Update Scores & Labels
     func updateScoreNum1 () {
         scoreLabel1.text = "\(scoreNum1)"
     }
