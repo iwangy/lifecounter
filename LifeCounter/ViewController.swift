@@ -16,11 +16,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var minusButton5: UIButton!
     @IBOutlet weak var plusButton5: UIButton!
     
+    @IBOutlet weak var resultLabel1: UILabel!
+    @IBOutlet weak var resultLabel2: UILabel!
+    
     var scoreNum1 = 20
     var scoreNum2 = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resultLabel1.text = "Player 1 Lost"
+        resultLabel2.text = "Player 2 Lost"
+        resultLabel1.isHidden = true
+        resultLabel2.isHidden = true
         
         updateScoreNum1()
         updateScoreNum2()
@@ -33,6 +41,7 @@ class ViewController: UIViewController {
         updateScoreNum1()
         if scoreNum1 <= 0 {
             checkScore(player: "1")
+            updateResultLabel1()
         }
         
     }
@@ -48,6 +57,7 @@ class ViewController: UIViewController {
         updateScoreNum1()
         if scoreNum1 <= 0 {
             checkScore(player: "1")
+            updateResultLabel1()
         }
     }
     
@@ -63,6 +73,7 @@ class ViewController: UIViewController {
         updateScoreNum2()
         if scoreNum2 <= 0 {
             checkScore(player: "2")
+            updateResultLabel2()
         }
     }
     
@@ -76,6 +87,7 @@ class ViewController: UIViewController {
         updateScoreNum2()
         if scoreNum2 <= 0 {
             checkScore(player: "2")
+            updateResultLabel2()
         }
     }
     @IBAction func plus5ButtonDidTouchUpInside2(_ sender: Any) {
@@ -91,6 +103,14 @@ class ViewController: UIViewController {
     
     func updateScoreNum2 () {
         scoreLabel2.text = "\(scoreNum2)"
+    }
+    
+    func updateResultLabel1() {
+        resultLabel1.isHidden = false
+    }
+    
+    func updateResultLabel2() {
+        resultLabel2.isHidden = false
     }
     
     // Check Scores

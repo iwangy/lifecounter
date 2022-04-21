@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,17 +13,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LifeCounter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SV6-sH-zlm">
-                                <rect key="frame" x="174" y="327" width="42" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SV6-sH-zlm">
+                                <rect key="frame" x="166.5" y="233.5" width="42" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfS-9f-tjN">
-                                <rect key="frame" x="261" y="321.66666666666669" width="40" height="31"/>
+                                <rect key="frame" x="253.5" y="228" width="40" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="+1"/>
                                 <connections>
@@ -31,21 +31,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfP-LL-ahj">
-                                <rect key="frame" x="92" y="321.66666666666669" width="37" height="31"/>
+                                <rect key="frame" x="84.5" y="228" width="37" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="-1"/>
                                 <connections>
                                     <action selector="minusButtonDidTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hff-lt-SAb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrX-Oe-Imp">
-                                <rect key="frame" x="174" y="481.66666666666669" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrX-Oe-Imp">
+                                <rect key="frame" x="166.5" y="388" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpD-0a-Xqp">
-                                <rect key="frame" x="261" y="476.66666666666669" width="40" height="31"/>
+                                <rect key="frame" x="253.5" y="383" width="40" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="+1"/>
                                 <connections>
@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ege-wD-aLp">
-                                <rect key="frame" x="92" y="476.66666666666669" width="37" height="31"/>
+                                <rect key="frame" x="84.5" y="383" width="37" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="-1"/>
                                 <connections>
@@ -61,7 +61,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvx-hE-oml">
-                                <rect key="frame" x="92" y="371.33333333333331" width="39" height="31"/>
+                                <rect key="frame" x="84.5" y="278" width="39" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="-5"/>
                                 <connections>
@@ -69,7 +69,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seg-c8-Azy">
-                                <rect key="frame" x="260" y="371.33333333333331" width="42" height="31"/>
+                                <rect key="frame" x="252.5" y="278" width="42" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="+5"/>
                                 <connections>
@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJa-nN-aKU">
-                                <rect key="frame" x="261" y="535" width="42" height="31"/>
+                                <rect key="frame" x="253.5" y="441.5" width="42" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="+5"/>
                                 <connections>
@@ -85,7 +85,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyY-Uh-Y93">
-                                <rect key="frame" x="90" y="535" width="39" height="31"/>
+                                <rect key="frame" x="82.5" y="441.5" width="39" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="-5"/>
                                 <connections>
@@ -93,14 +93,26 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0A-f2-IDg">
-                                <rect key="frame" x="146" y="261" width="98" height="32"/>
+                                <rect key="frame" x="138.5" y="167.5" width="98" height="32"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iA-pD-VnM">
-                                <rect key="frame" x="144" y="420.66666666666669" width="102" height="33"/>
+                                <rect key="frame" x="136.5" y="327" width="102" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bay-WS-ALB">
+                                <rect key="frame" x="166.5" y="283" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxN-5f-sod">
+                                <rect key="frame" x="166.5" y="446.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -112,16 +124,23 @@
                             <constraint firstItem="xfP-LL-ahj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="2CG-PC-5qa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JfS-9f-tjN" secondAttribute="trailing" constant="5" id="5pm-Co-R5m"/>
                             <constraint firstItem="i0A-f2-IDg" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-150" id="8VY-DB-Tai"/>
+                            <constraint firstItem="lxN-5f-sod" firstAttribute="centerY" secondItem="eyY-Uh-Y93" secondAttribute="centerY" id="9VE-41-ncy"/>
                             <constraint firstItem="fpD-0a-Xqp" firstAttribute="leading" secondItem="YrX-Oe-Imp" secondAttribute="trailing" constant="45" id="9z6-oE-A81"/>
                             <constraint firstItem="ege-wD-aLp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="Awh-rH-Yfh"/>
+                            <constraint firstItem="bay-WS-ALB" firstAttribute="centerY" secondItem="Pvx-hE-oml" secondAttribute="centerY" id="BF2-b6-Tcm"/>
                             <constraint firstItem="YrX-Oe-Imp" firstAttribute="leading" secondItem="ege-wD-aLp" secondAttribute="trailing" constant="45" id="Ci3-lT-GwS"/>
                             <constraint firstItem="YrX-Oe-Imp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DuG-Eg-KtI"/>
                             <constraint firstItem="Pvx-hE-oml" firstAttribute="top" secondItem="SV6-sH-zlm" secondAttribute="bottom" constant="24.333333333333314" id="EeD-79-fxH"/>
+                            <constraint firstItem="bay-WS-ALB" firstAttribute="centerY" secondItem="seg-c8-Azy" secondAttribute="centerY" id="ErM-cS-RVW"/>
                             <constraint firstItem="4iA-pD-VnM" firstAttribute="centerX" secondItem="YrX-Oe-Imp" secondAttribute="centerX" id="Exn-aQ-Eqh"/>
+                            <constraint firstItem="lxN-5f-sod" firstAttribute="centerX" secondItem="YrX-Oe-Imp" secondAttribute="centerX" id="F8u-42-uJV"/>
+                            <constraint firstItem="RJa-nN-aKU" firstAttribute="leading" secondItem="lxN-5f-sod" secondAttribute="trailing" constant="45" id="FtF-Nq-VzP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fpD-0a-Xqp" secondAttribute="trailing" constant="5" id="HJ5-bH-aHD"/>
                             <constraint firstItem="i0A-f2-IDg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="Ivz-vv-cbM"/>
                             <constraint firstItem="ege-wD-aLp" firstAttribute="centerY" secondItem="YrX-Oe-Imp" secondAttribute="centerY" id="KWy-Xg-8eI"/>
+                            <constraint firstItem="bay-WS-ALB" firstAttribute="centerX" secondItem="SV6-sH-zlm" secondAttribute="centerX" id="KyU-Kb-90g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="i0A-f2-IDg" secondAttribute="trailing" constant="5" id="LJ0-BN-n13"/>
+                            <constraint firstItem="seg-c8-Azy" firstAttribute="leading" secondItem="bay-WS-ALB" secondAttribute="trailing" constant="44" id="LNl-S2-lV5"/>
                             <constraint firstItem="YrX-Oe-Imp" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="65" id="LbM-IG-Meq"/>
                             <constraint firstItem="seg-c8-Azy" firstAttribute="leading" secondItem="SV6-sH-zlm" secondAttribute="trailing" constant="44" id="N2t-Gc-gao"/>
                             <constraint firstItem="JfS-9f-tjN" firstAttribute="centerY" secondItem="SV6-sH-zlm" secondAttribute="centerY" id="N9N-oT-Nme"/>
@@ -131,13 +150,16 @@
                             <constraint firstItem="RJa-nN-aKU" firstAttribute="top" secondItem="YrX-Oe-Imp" secondAttribute="bottom" constant="32.5" id="VPj-Fm-AGG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4iA-pD-VnM" secondAttribute="trailing" constant="5" id="WFq-a4-e7j"/>
                             <constraint firstItem="4iA-pD-VnM" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="10" id="ZPz-Yn-G6k"/>
+                            <constraint firstItem="lxN-5f-sod" firstAttribute="centerY" secondItem="RJa-nN-aKU" secondAttribute="centerY" id="akv-5T-pvh"/>
                             <constraint firstItem="seg-c8-Azy" firstAttribute="top" secondItem="SV6-sH-zlm" secondAttribute="bottom" constant="24.333333333333314" id="bc8-iU-OeN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="seg-c8-Azy" secondAttribute="trailing" constant="5" id="cgG-sp-LOy"/>
+                            <constraint firstItem="bay-WS-ALB" firstAttribute="leading" secondItem="Pvx-hE-oml" secondAttribute="trailing" constant="43" id="dE7-y9-P1f"/>
                             <constraint firstItem="SV6-sH-zlm" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-90" id="dhb-yv-qJz"/>
                             <constraint firstItem="SV6-sH-zlm" firstAttribute="centerY" secondItem="xfP-LL-ahj" secondAttribute="centerY" id="e4c-cR-dNV"/>
                             <constraint firstItem="YrX-Oe-Imp" firstAttribute="leading" secondItem="eyY-Uh-Y93" secondAttribute="trailing" constant="45" id="ig2-Am-raw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RJa-nN-aKU" secondAttribute="trailing" constant="5" id="iyk-PX-wVu"/>
                             <constraint firstItem="SV6-sH-zlm" firstAttribute="leading" secondItem="Pvx-hE-oml" secondAttribute="trailing" constant="43" id="nE8-QU-iFy"/>
+                            <constraint firstItem="lxN-5f-sod" firstAttribute="leading" secondItem="eyY-Uh-Y93" secondAttribute="trailing" constant="45" id="nEm-il-kb6"/>
                             <constraint firstItem="eyY-Uh-Y93" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="p6H-GV-1mF"/>
                             <constraint firstItem="Pvx-hE-oml" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="rRS-X4-EV5"/>
                             <constraint firstItem="SV6-sH-zlm" firstAttribute="leading" secondItem="xfP-LL-ahj" secondAttribute="trailing" constant="45" id="rcW-PH-daw"/>
@@ -151,6 +173,8 @@
                         <outlet property="minusButton5" destination="Pvx-hE-oml" id="Kur-yd-P6p"/>
                         <outlet property="plusButton1" destination="JfS-9f-tjN" id="dnM-bd-neE"/>
                         <outlet property="plusButton5" destination="seg-c8-Azy" id="44T-N7-H63"/>
+                        <outlet property="resultLabel1" destination="bay-WS-ALB" id="Epn-Vy-im7"/>
+                        <outlet property="resultLabel2" destination="lxN-5f-sod" id="XcM-Bk-SN4"/>
                         <outlet property="scoreLabel1" destination="SV6-sH-zlm" id="GpS-qH-bVJ"/>
                         <outlet property="scoreLabel2" destination="YrX-Oe-Imp" id="TXe-y3-xzd"/>
                     </connections>
