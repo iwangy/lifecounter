@@ -7,124 +7,149 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+protocol playerDelegate {
+    func addHistory(player: String, action: String, num: Int)
+    func checkScore(score: Int, player: String)
+    func gameStart()
+    func present(alertController: UIAlertController)
+    func hideMessage()
+}
 
-    @IBOutlet weak var scoreLabel1: UILabel!
-    @IBOutlet weak var scoreLabel2: UILabel!
-    @IBOutlet weak var minusButton1: UIButton!
-    @IBOutlet weak var plusButton1: UIButton!
-    @IBOutlet weak var minusButton5: UIButton!
-    @IBOutlet weak var plusButton5: UIButton!
-    
-    @IBOutlet weak var resultLabel1: UILabel!
-    @IBOutlet weak var resultLabel2: UILabel!
-    
-    var scoreNum1 = 20
-    var scoreNum2 = 20
+class ViewController: UIViewController, playerDelegate {
+    // Vars
+    var numPlayers = 4
+    var playersAlive = 4
+    var history:[String] = []
+    var playerList: [PlayerScoreControl] = []
+    var players = ["Player 1", "Player 2", "Player 3", "Player 4", "Player 5", "Player 6", "Player 7", "Player 8"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        outcomeLabel.isHidden = true
+        for i in 0...3 {
+            createPlayer(i: i)
+        }
+    }
+    
+    //Button Outlets
+    @IBOutlet weak var addPlayerButton: UIButton!
+    @IBOutlet weak var removePlayerButton: UIButton!
+    @IBOutlet weak var playerStackView: UIStackView!
+    @IBOutlet weak var outcomeLabel: UILabel!
+    
+    //Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier
+        {
+        case Optional("fromMainToHistory"):
+            print("Going from main to history")
+            let historyVC = segue.destination as? ViewControllerHistory
+            historyVC?.history = history
+            break;
+        default:
+            print("I have no idea what segue you're using")
+        }
+    }
+    
+    func createPlayer(i: Int) {
+        let newPlayer = PlayerScoreControl()
+        newPlayer.data = (i)
+        newPlayer.tag = i
+        newPlayer.delegate = self
+        playerList.append(newPlayer)
+        playerStackView.addArrangedSubview(newPlayer)
+    }
+    
+    func present(alertController: UIAlertController) {
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func gameStart() {
+        addPlayerButton.isEnabled = false
+        removePlayerButton.isEnabled = false
+    }
+    
+    func hideMessage() {
+        outcomeLabel.isHidden = true
+    }
+    
+    func addHistory(player: String, action: String, num: Int) {
+        var text = player
+        switch action {
+        case "+":
+            text += " gained " + String(num) + " life."
+        case "-":
+            text += " lost " + String(num) + " life."
+        default:
+            text += " Loses!"
+        }
+        history.append(text)
+    }
+    
+    func checkScore(score: Int, player: String) {
+        if score <= 0 {
+            outcomeLabel.text = "\(player) LOSES!"
+            outcomeLabel.isHidden = false
+            addHistory(player: player, action: "lose", num: 0)
+            playersAlive -= 1;
+        }
         
-        resultLabel1.text = "Player 1 Lost"
-        resultLabel2.text = "Player 2 Lost"
-        resultLabel1.isHidden = true
-        resultLabel2.isHidden = true
+        perform(#selector(checkGame), with: nil, afterDelay: 0.2)
+    }
+    
+    @objc func checkGame() {
+        if playersAlive == 1 {
+            outcomeLabel.text = "Game Over!"
+            perform(#selector(resetGame), with: nil, afterDelay: 0.2)
+        }
+    }
+    
+    @objc func resetGame() {
+        for p in playerList {
+            p.reset()
+        }
+        outcomeLabel.isHidden = true
+        history = []
+        if numPlayers != 8 {
+            addPlayerButton.isEnabled = true;
+        }
+        if numPlayers != 2 {
+            removePlayerButton.isEnabled = true;
+        }
+       playersAlive = numPlayers
+    }
+    
+    @IBAction func addPlayer(_ sender: Any) {
+        createPlayer(i: numPlayers)
+        numPlayers += 1
+        playersAlive += 1
         
-        updateScoreNum1()
-        updateScoreNum2()
+        if numPlayers == 8 {
+            addPlayerButton.isEnabled = false
+        }
+        if numPlayers != 2 {
+            removePlayerButton.isEnabled = true
+        }
+        
+    }
+    
+    @IBAction func removePlayer(_ sender: Any) {
+        numPlayers -= 1
+        playersAlive  -= 1
+        for i in 0...(playerList.count - 1) {
+            if (playerList[i]).tag == numPlayers {
+                playerList[i].removeFromSuperview()
+                playerList.remove(at: i)
+            }
+        }
+        
+        if numPlayers != 8 {
+            addPlayerButton.isEnabled = true;
+        }
+        if numPlayers == 2 {
+            removePlayerButton.isEnabled = false;
+        }
+    }
 
-    }
-
-    //Player 1 Buttons
-    @IBAction func minusButtonDidTouchUpInside(_ sender: Any) {
-        scoreNum1 -= 1
-        updateScoreNum1()
-        if scoreNum1 <= 0 {
-            checkScore(player: "1")
-            updateResultLabel1()
-        }
-        
-    }
-    
-    @IBAction func plusButtonDidTouchUpInside(_ sender: Any) {
-        scoreNum1 += 1
-        updateScoreNum1()
-        
-    }
-    
-    @IBAction func minus5ButtonDidTouchUpInside(_ sender: Any) {
-        scoreNum1 -= 5
-        updateScoreNum1()
-        if scoreNum1 <= 0 {
-            checkScore(player: "1")
-            updateResultLabel1()
-        }
-    }
-    
-    @IBAction func plus5ButtonDidTouchUpInside(_ sender: Any) {
-        scoreNum1 += 5
-        updateScoreNum1()
-    }
-    
-    // Player 2 Buttons
-    @IBAction func minusButtonDidTouchUpInside2(_ sender: Any) {
-        scoreNum2 -= 1
-        updateScoreNum2()
-        if scoreNum2 <= 0 {
-            checkScore(player: "2")
-            updateResultLabel2()
-        }
-    }
-    
-    @IBAction func plusButtonDidTouchUpInside2(_ sender: Any) {
-        scoreNum2 += 1
-        updateScoreNum2()
-    }
-    
-    @IBAction func minus5ButtonDidTouchUpInside2(_ sender: Any) {
-        scoreNum2 -= 5
-        updateScoreNum2()
-        if scoreNum2 <= 0 {
-            checkScore(player: "2")
-            updateResultLabel2()
-        } else {
-            updateResultLabel2()
-        }
-    }
-    @IBAction func plus5ButtonDidTouchUpInside2(_ sender: Any) {
-        scoreNum2 += 5
-        updateScoreNum2()
-    }
-    
-    // Update Scores & Labels
-    func updateScoreNum1 () {
-        scoreLabel1.text = "\(scoreNum1)"
-    }
-    
-    func updateScoreNum2 () {
-        scoreLabel2.text = "\(scoreNum2)"
-    }
-    
-    func updateResultLabel1() {
-        resultLabel1.isHidden = false
-    }
-    
-    func updateResultLabel2() {
-        resultLabel2.isHidden = false
-    }
-    
-    // Check Scores
-    func checkScore (player: String) {
-        let alert = UIAlertController(title: "My Alert", message: "Player \(player) Lost", preferredStyle: .alert)
-               alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-               NSLog("The \"OK\" alert occured.")
-               }))
-               self.present(alert, animated: true, completion: {
-                   NSLog("The alert was presented")
-               })
-
-    }
-    
-    
 }
 
